@@ -296,13 +296,11 @@ def main():
       elif(user_input == "0"):
         complete = True
       else:
-        
+        print("Wrong Input, Input again")
         if(vic):
-          print("Wrong Input")
           print("You win, one more(Y/N)?",end="")
           user_input = input()
         else:
-          print("Wrong Input, Input again")
           user_input = input_guess()
     # ==================================
     print("Thank you for using this program")
