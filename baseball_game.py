@@ -263,8 +263,8 @@ def is_no(one_more_input):
     return result
 
 def input_guess():
-  print("Input guess number : ",end="")
-  user_input = input()
+  # print("Input guess number : ",end="")
+  user_input = input("Input guess number : ")
   return user_input
 
 def main():
@@ -282,8 +282,8 @@ def main():
         print("Strikes : {} , Balls : {}".format(s_b[0], s_b[1]))
         if(s_b[0] == 3 and s_b[1] == 0):
           vic = True
-          print("You win, one more(Y/N)?",end="")
-          user_input = input()
+          # print("You win, one more(Y/N)?",end="")
+          user_input = input("You win, one more(Y/N)?")
         else:
           user_input = input_guess()
       elif(is_no(user_input) and vic):
@@ -298,8 +298,8 @@ def main():
       else:
         print("Wrong Input, Input again")
         if(vic):
-          print("You win, one more(Y/N)?",end="")
-          user_input = input()
+          # print("You win, one more(Y/N)?",end="")
+          user_input = input("You win, one more(Y/N)?")
         else:
           user_input = input_guess()
     # ==================================
