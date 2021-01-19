@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import random
-
+import unittest
 
 def get_random_number():
     # Helper Function - 지우지 말 것
@@ -90,7 +90,7 @@ def is_duplicated_number(three_digit):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     result = False
     a, b, c = three_digit[0], three_digit[1], three_digit[2]
-    if(a == b or a == c or b == c):
+    if(a == b or a == c or b == c or a == "0"):
       result = True
     # ==================================
     return result
@@ -262,11 +262,6 @@ def is_no(one_more_input):
     # ==================================
     return result
 
-def input_guess():
-  # print("Input guess number : ",end="")
-  user_input = input("Input guess number : ")
-  return user_input
-
 def main():
     print("Play Baseball")
     random_number = str(get_not_duplicated_three_digit_number())
@@ -275,7 +270,7 @@ def main():
     # 위의 코드를 포함하여 자유로운 수정이 가능함
     vic = False
     complete = False
-    user_input = input_guess()
+    user_input = input("Input guess number : ")
     while(not complete):
       if(is_validated_number(user_input)):
         s_b = get_strikes_or_ball(user_input, random_number)
@@ -285,13 +280,13 @@ def main():
           # print("You win, one more(Y/N)?",end="")
           user_input = input("You win, one more(Y/N)?")
         else:
-          user_input = input_guess()
+          user_input = input("Input guess number : ")
       elif(is_no(user_input) and vic):
         complete = True
       elif(is_yes(user_input) and vic):
         random_number = str(get_not_duplicated_three_digit_number())
         print("Random Number is : ", random_number)
-        user_input = input_guess()
+        user_input = input("Input guess number : ")
         vic = False
       elif(user_input == "0"):
         complete = True
@@ -301,7 +296,7 @@ def main():
           # print("You win, one more(Y/N)?",end="")
           user_input = input("You win, one more(Y/N)?")
         else:
-          user_input = input_guess()
+          user_input = input("Input guess number : ")
     # ==================================
     print("Thank you for using this program")
     print("End of the Game")
